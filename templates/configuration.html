@@ -1,0 +1,28 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+   
+    <h3 class="addheaders">Add Vehicle:</h3>
+         <div class="card card-form">
+            <form action="" method=POST>
+                {%csrf_token%}
+
+                {% for field in form %}
+                <div class="form-field">
+                    {{ field.label_tag }}
+                    <br>
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+                {% endfor %}
+
+                <br>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+        </div>
+    
+
+    
+    
+{% endblock %}
