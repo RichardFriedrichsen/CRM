@@ -1,0 +1,5 @@
+# Virtual Environment
+/venv
+
+# Code to check E-Mails
+imap.py
