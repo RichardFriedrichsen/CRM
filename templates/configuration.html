@@ -3,7 +3,7 @@
 {% block content %}
 
    
-    <h3 class="addheaders">Add Vehicle:</h3>
+    <h3 class="addheaders">E-Mail Configuration:</h3>
          <div class="card card-form">
             <form action="" method=POST>
                 {%csrf_token%}
@@ -18,7 +18,7 @@
                 {% endfor %}
 
                 <br>
-                <input type="submit" value="Submit" class="btn btn-primary">
+                <input type="submit" value="{% if config is None %}Submit{% else %}Update{% endif%}" class="btn btn-primary">
             </form>
         </div>
     
