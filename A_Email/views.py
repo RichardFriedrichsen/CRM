@@ -6,5 +6,4 @@ from .tasks import mock_action, retrivingEmails
 
 def list_emails(request):
     retrivingEmails()
-    mock_action.delay()
     return render(request, "email.html")
