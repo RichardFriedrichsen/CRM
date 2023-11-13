@@ -1,0 +1,95 @@
+/* Utility classes */
+:root {
+    --writing-color: #FDF7FF;
+    --background-color: #343a40;
+    --button-color: #00A989;
+    --primary-color: #007bff;
+}
+
+
+body {
+    background: url('laptop-from-above.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1fr, 12);
+    grid-template-rows: repeat(1fr, 6);
+
+    font-weight: bold;
+    color: var(--button-color);
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    background-color: var(--button-color);
+    border-radius: 5px;
+    font-size: 40px;
+    padding: 5px 10px;
+    border: 1px solid black;
+}
+
+.button-sign-up {
+    grid-column: 11/12;
+    display: block;
+    margin: 20px auto;
+    max-width: 150px;
+    font-weight: bold;
+
+    color: black;
+    background-color: var(--button-color);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.button-sign-up:hover {
+    color: #FDF7FF;
+}
+
+.container-div {
+    grid-column: 6/7;
+    grid-row: 3/4;
+    margin: 0 auto;
+}
+
+.label-inputs {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.label {
+    color: var(--writing-color);
+    background-color: #343a40;
+    border-radius: 5px;
+    padding: 3px 6px;
+    display: inline-block;
+}
+
+.input-boxes {
+    border-radius: 5px;
+    height: 25px;
+}
+
+a {
+    display: block;
+    text-decoration: None;
+    text-align: center;
+    color: black;
+}
+
+.login-button {
+    margin: 15px auto;
+    padding: 5px;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    border: 1px solid var(--background-color);
+}
+
+.login-button:hover {
+    color: var(--writing-color);
+}

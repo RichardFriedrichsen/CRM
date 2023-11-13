@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from . configuration_from import add_config
 from .models import User
+
+
+def login_user(request):
+    return render(request, 'authenticate/login.html')
 
 
 def list_config(request):
