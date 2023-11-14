@@ -1,12 +1,33 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from . configuration_from import add_config
 from .models import User
 
 
 def login_user(request):
-    return render(request, 'authenticate/login.html')
+
+    # If the method is post, otherwise it would be get
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+
+        # If authenticate works then we have a User and it's not none
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect(reverse('emails:list_emails'))
+
+        # If the login fails
+        else:
+
+            return HttpResponseRedirect(reverse('user:login_user'))
+
+    # If we have a GET request
+    else:
+        return render(request, 'authenticate/login.html')
 
 
 def list_config(request):

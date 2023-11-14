@@ -6,18 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>Login</title>
 </head>
 <body>
     <a class="button-sign-up" href="">Sign Up</a>
-    <div class="container-div">
+
+    <form action="" method="POST">
+        {% csrf_token %}
         <h1>CRM System</h1>
         <label class="label-inputs label" for="Username">Username:</label>
-        <input class="label-inputs input-boxes" type="Username" placeholder="Username">
+        <input class="label-inputs input-boxes" type="Username" placeholder="Username" name="username">
         <label class="label-inputs label" for="Password">Password:</label>
-        <input class="label-inputs input-boxes" type="Password" placeholder="Password">
-        <a class="label-inputs login-button" href="#">Login</a>
-   
-    </div>
+        <input class="label-inputs input-boxes" type="Password" placeholder="Password" name="password">
+        <button class="label-inputs login-button" type="submit" value="Login">Login</button>
+
+    </form>
 </body>
 </html>

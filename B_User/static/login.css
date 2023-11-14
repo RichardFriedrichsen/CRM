@@ -1,13 +1,17 @@
 /* Utility classes */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Linear+B&display=swap');
+
 :root {
     --writing-color: #FDF7FF;
     --background-color: #343a40;
     --button-color: #00A989;
     --primary-color: #007bff;
+
 }
 
 
 body {
+    font-family: 'Noto Sans Linear B', sans-serif;
     background: url('laptop-from-above.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
@@ -25,7 +29,7 @@ h1 {
     color: black;
     background-color: var(--button-color);
     border-radius: 5px;
-    font-size: 40px;
+    font-size: 35px;
     padding: 5px 10px;
     border: 1px solid black;
 }
@@ -82,6 +86,7 @@ a {
 }
 
 .login-button {
+    font-family: 'Noto Sans Linear B', sans-serif;
     margin: 15px auto;
     padding: 5px;
     font-weight: bold;
