@@ -46,16 +46,6 @@ body {
 
 
 
-ul.navbar li a {
-    color: var(--writing-color);
-    text-decoration: none;
-}
-
-ul.navbar li a:hover {
-    color: var(--button-color);
-    text-decoration: none;
-}
-
 
 /************ Top Bar ***************/
 .topbar {
@@ -75,4 +65,8 @@ ul.navbar li a:hover {
 
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
+}
+
+.sub-menu {
+    display: none;
 }

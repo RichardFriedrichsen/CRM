@@ -1,0 +1,34 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+   
+    <h3 >All Clients:</h3>
+    <table border="1">
+        <tr>
+            
+            <th>Name</th>
+            <th>Surname</th>
+            <th>email</th>
+            <th>action</th>
+        </tr>
+        {% for client in all_clients %}
+        <tr>   
+            <td>{{ client.name }}</td>
+            <td>{{ client.surname }}</td>
+            <td>{{ client.email }}</td>
+            <td><button>edit</button></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+            
+               
+             
+                
+
+             
+
+    
+    
+{% endblock %}

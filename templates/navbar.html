@@ -8,7 +8,11 @@
         
     </li>
     <li class="grid-align-vertical">
-        <a href="#about">Clients</a>
+        <a href="{% url 'client:read_clients'%}">Clients</a>
+        <ul class="sub-menu">
+            <li class="sub-menu"><a href="{% url 'client:add_client'%}">Add Clients</a></li>
+            <li><a href="{% url 'client:read_clients'%}">View Clients</a></li>
+        </ul>
     </li>
     <li class="grid-align-vertical">
         <a href="#services">Recent Clients</a>

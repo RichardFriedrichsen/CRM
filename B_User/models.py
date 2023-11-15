@@ -17,3 +17,6 @@ class User(models.Model):
     # Outgoing Server Settings
     smtp_server = models.CharField(max_length=50, null=True)
     smtp_port = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return f"{self.name} {self.surname}"
