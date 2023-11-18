@@ -45,11 +45,11 @@ def retrivingEmails():
 
         # Creating a new instance of an E-Mail
         new_Email = Email(
-            _user=user,
+            user=user,
             last_synched=date.today(),
-            _from=message.get('From'),
-            _to=message.get('To'),
-            _subject=message.get('Subject'),
+            sender=message.get('From'),
+            to=message.get('To'),
+            subject=message.get('Subject'),
             message=message_text,
             read=False,
         )
@@ -60,10 +60,3 @@ def retrivingEmails():
         print(f"Date: {message.get('Date')}")
 
     imap.close()
-
-
-@shared_task
-def mock_action():
-    print("Testing task")
-    time.sleep(15)
-    print("Testing task")

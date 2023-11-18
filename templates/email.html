@@ -2,5 +2,23 @@
 
 {% block content %}
 
-<h2>email works</h2>
+<table border="1">
+    <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Subject</th>
+        <th>Read</th>
+        <th>Action</th>
+    </tr>
+    {% for email in read_emails %}
+    <tr>
+        <td>{{email.user.name}}</td>
+        <td>{{email.last_synched}}</td>
+        <td>{{email.subject}}</td>
+        <td>{{email.read}}</td>
+        <td><button>Delete</button></td>
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}

@@ -1,14 +1,14 @@
 from django.db import models
 # Create your models here.
-from B_User.models import User
+from B_User.models import User as Usr
 
 
 class Email(models.Model):
-    _user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(Usr, on_delete=models.CASCADE)
     last_synched = models.DateField()
-    _from = models.CharField(max_length=100)
-    _to = models.CharField(max_length=100)
-    _subject = models.CharField(max_length=100)
+    sender = models.CharField(max_length=100)
+    to = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100)
     message = models.TextField()
     read = models.BooleanField(default=False)
 
