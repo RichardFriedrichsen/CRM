@@ -13,8 +13,8 @@
     {% for email in read_emails %}
     <tr>
         <td>{{email.user.name}}</td>
-        <td>{{email.last_synched}}</td>
-        <td>{{email.subject}}</td>
+        <td>{{email.dateReceived}}</td>
+        <td> <a href="{% url 'emails:read_mail' email.id%}"> {{email.subject}}</a></td>
         <td>{{email.read}}</td>
         <td><button>Delete</button></td>
     </tr>
