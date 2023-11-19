@@ -1,6 +1,6 @@
 from celery import shared_task
 import time
-from datetime import date
+from datetime import datetime
 
 from B_User.models import User
 from C_Client.models import Client
@@ -35,28 +35,56 @@ def retrivingEmails():
     for mgsnum in msgnums[0].split():
 
         _, data = imap.fetch(mgsnum, "(RFC822)")
+        print("Fetching email successful")
 
         message = email_parser.message_from_bytes(data[0][1])
+
         message_text = ""
 
         for part in message.walk():
             if part.get_content_type() == "text/plain":
                 message_text += part.as_string()
 
+        # Convert Email date to python date
+        received_date_string = message.get('Date')
+        
+
+        try:
+
+            date_without_timezone = received_date_string[:-4]
+            received_date = datetime.strptime(date_without_timezone, "%a, %d %b %Y %H:%M:%S")
+            print(f"Conversion worked for email {message.get('Subject')}")
+            formatted_date = received_date.strftime('%Y-%m-%d %H:%M')
+            print("test")
+        
+        except ValueError:
+            print("Date parsing failed. Format mismatch or invalid date string.")
+
+
         # Creating a new instance of an E-Mail
-        new_Email = Email(
-            user=user,
-            last_synched=date.today(),
-            sender=message.get('From'),
-            to=message.get('To'),
-            subject=message.get('Subject'),
-            message=message_text,
-            read=False,
-        )
+        duplicate_email_check = Email.objects.filter(
+        sender=message.get('From'),
+        subject=message.get('Subject'),
+        dateReceived=formatted_date
+        ) 
 
-        new_Email.save()
-        print("E-Mail Saved")
+        print(duplicate_email_check.exists())
 
-        print(f"Date: {message.get('Date')}")
+        if duplicate_email_check.exists() is False:
+
+            new_Email = Email(
+                user = user,
+                dateReceived = formatted_date,
+                sender = message.get('From'),
+                to = message.get('To'),
+                subject = message.get('Subject'),
+                message = message_text,
+                read = False,
+            )
+
+            new_Email.save()
+            print("E-Mail Saved")
+        else:
+            print("E-Mail already exists")
 
     imap.close()
