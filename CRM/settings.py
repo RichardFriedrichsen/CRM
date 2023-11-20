@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'A_Email',
     'B_User',
     'C_Client',
+    'D_Notes',
 ]
 
 MIDDLEWARE = [

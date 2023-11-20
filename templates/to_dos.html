@@ -1,0 +1,29 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+   
+    <h3 >To Do List:</h3>
+    <table border="1">
+        <tr>
+            
+            <th>Created</th>
+            <th>Client</th>
+            <th>Contact Type</th>
+            <th>Title</th>
+            <th>Summary</th>
+        </tr>
+        {% for todo in todo_notes %}
+        <tr>   
+            <td>{{ todo.createDate }}</td>
+            <td>{{ todo.client }}</td>
+            <td>{{ todo.contact_type }}</td>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.summary }}</td>
+            <td><button>edit</button></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+{% endblock %}
