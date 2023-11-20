@@ -3,8 +3,35 @@
 {% extends 'main.html'%}
 
 {% block content %}
-<h2>Email detail works</h2>
+<h2>Email Detail</h2>
 
-{{email}}
+<div class="date">
+    <label for="date">Date: </label>
+    <p>{{email.dateReceived}}</p>
+</div>
+
+<div class="sender">
+    <label for="sender">Sender:</label>
+    <p>{{email.sender}}</p>
+</div>
+
+<div class="to">
+    <label for="to">To: </label>
+    <p>{{email.to}}</p>
+</div>
+
+<div class="subject">
+    <label for="subject">Subject: </label>
+    <p>{{email.subject}}</p>
+</div>
+<div class="message">
+    <label for="message">Message: </label>
+    <p>{{email.message}}</p>
+</div>
+<div class="actions">
+    <button>Reply</button>
+    <button>Delete</button>
+</div>
+
 
 {% endblock %}

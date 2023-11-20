@@ -5,7 +5,9 @@
     </h1>
     <li class="grid-align-vertical">
         <a  href="{% url 'emails:list_emails'%}">Inbox</a>
-        
+    </li>
+    <li class="grid-align-vertical">
+        <a  href="{% url 'notes:add_note'%}">To-Do-List</a>
     </li>
     <li class="grid-align-vertical">
         <a href="{% url 'client:read_clients'%}">Clients</a>
@@ -14,8 +16,10 @@
             <li><a href="{% url 'client:read_clients'%}">View Clients</a></li>
         </ul>
     </li>
+  
+
     <li class="grid-align-vertical">
-        <a href="#services">Recent Clients</a>
+        <a href="#services">Recent Contacts</a>
     </li>
     <li class="grid-align-vertical">
         <a href="#services">Bulk E-Mails</a>
