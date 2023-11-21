@@ -5,6 +5,7 @@
 
 .grid-align-vertical {
     align-self: center;
+    justify-self: start;
     font-size: 1.25rem;
 }
 
@@ -35,13 +36,20 @@ body {
     height: 650px;
     background-color: var(--background-color);
 
-    text-align: center;
     list-style: none;
     text-decoration: none;
     color: var(--writing-color);
 
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+}
+
+.navbar-anchor {
+    display: inline-block;
+    margin-left: 10px;
+    text-decoration: none;
+
+    color: blue;
 }
 
 
@@ -64,8 +72,4 @@ body {
 
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
-}
-
-.sub-menu {
-    display: none;
 }
