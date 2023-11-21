@@ -25,3 +25,9 @@ def read_notes(request):
     todo_notes = Note.objects.filter(add_to_do = True)
 
     return render(request, "to_dos.html", {"todo_notes": todo_notes})
+
+def update_note(request):
+    pass
+
+def delete_note(request):
+    pass

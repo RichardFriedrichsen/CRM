@@ -4,31 +4,34 @@
         CRM
     </h1>
     <li class="grid-align-vertical">
-        <a  href="{% url 'emails:list_emails'%}">Inbox</a>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <a class="navbar-anchor" href="{% url 'emails:list_emails'%}">Inbox</a>
     </li>
     <li class="grid-align-vertical">
-        <a  href="{% url 'notes:add_note'%}">To-Do-List</a>
+        <i class="fa-solid fa-list"></i>
+        <a class="navbar-anchor" href="{% url 'notes:add_note'%}">To-Do-List</a>
     </li>
     <li class="grid-align-vertical">
-        <a href="{% url 'client:read_clients'%}">Clients</a>
-        <ul class="sub-menu">
-            <li class="sub-menu"><a href="{% url 'client:add_client'%}">Add Clients</a></li>
-            <li><a href="{% url 'client:read_clients'%}">View Clients</a></li>
-        </ul>
+        <i class="fa-solid fa-user"></i>
+        <a class="navbar-anchor" href="{% url 'client:read_clients'%}">Clients</a>
     </li>
   
 
     <li class="grid-align-vertical">
-        <a href="#services">Recent Contacts</a>
+        <i class="fa-regular fa-address-card"></i>
+        <a class="navbar-anchor" href="#services">Recent Contacts</a>
     </li>
     <li class="grid-align-vertical">
-        <a href="#services">Bulk E-Mails</a>
+        <i class="fa-solid fa-envelope-open-text"></i>
+        <a class="navbar-anchor" href="#services">Bulk E-Mails</a>
     </li>
     <li class="grid-align-vertical">
-        <a href="#services">Signatures</a>
+        <i class="fa-solid fa-signature"></i>
+        <a class="navbar-anchor" href="#services">Signatures</a>
     </li>
     <li class="grid-align-vertical">
-        <a href="{% url 'user:list_config'%}">Configuration</a>
+        <i class="fa-solid fa-gear"></i>
+        <a class="navbar-anchor" href="{% url 'user:list_config'%}">Configuration</a>
     </li>
 </ul>
    
