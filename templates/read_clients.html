@@ -17,7 +17,7 @@
             <td>{{ client.name }}</td>
             <td>{{ client.surname }}</td>
             <td>{{ client.email }}</td>
-            <td><button class="table-button"><a class="table-anchor" href="#">Edit</a></button>
+            <td><button class="table-button"><a class="table-anchor" href="{% url 'client:update_client' client.id %}">Edit</a></button>
                 <button class="table-button table-button-delete"><a class="table-anchor" href="{% url 'client:delete_client' client.id %}">Delete</a></button></td>
         </tr>
         {% endfor %}

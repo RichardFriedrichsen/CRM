@@ -16,7 +16,7 @@
                 </div>
                 {% endfor %}
                 <div class="div-button">
-                <button type="submit" value="Add" class="table-button">Add</button>
+                <button type="submit" value="Add" class="table-button">{% if note is None %}Add{% else %}Update{% endif%}</button>
                 </div>
             </form>
     </div>

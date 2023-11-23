@@ -23,7 +23,7 @@
             <td>{{ todo.contact_type }}</td>
             <td>{{ todo.title }}</td>
             <td>{{ todo.summary }}</td>
-            <td><button class="table-button"><a class="table-anchor" href="#">Edit</a></button><button class="table-button table-button-delete"><a class="table-anchor" href="{% url 'notes:delete_note' todo.id %}">Delete</a></button></td>
+            <td><button class="table-button"><a class="table-anchor" href="{% url 'notes:update_note' todo.id %}">Edit</a></button><button class="table-button table-button-delete"><a class="table-anchor" href="{% url 'notes:delete_note' todo.id %}">Delete</a></button></td>
         </tr>
         {% endfor %}
 
