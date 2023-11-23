@@ -7,15 +7,22 @@
         <i class="fa fa-envelope" aria-hidden="true"></i>
         <a class="navbar-anchor" href="{% url 'emails:list_emails'%}">Inbox</a>
     </li>
-    <li class="grid-align-vertical">
+    <li class="grid-align-vertical dropdown">
         <i class="fa-solid fa-list"></i>
-        <a class="navbar-anchor" href="{% url 'notes:add_note'%}">To-Do-List</a>
+        <a class="navbar-anchor" href="{% url 'notes:read_note'%}">To-Do-List</a>
+        <i class="fa-solid fa-caret-down"></i>
+        <div class="dropdown-content">
+            <a class="navbar-anchor" href="{% url 'notes:add_note'%}">- Add Notes</a>
+        </div>
     </li>
-    <li class="grid-align-vertical">
+    <li class="grid-align-vertical dropdown">
         <i class="fa-solid fa-user"></i>
         <a class="navbar-anchor" href="{% url 'client:read_clients'%}">Clients</a>
+        <i class="fa-solid fa-caret-down"></i>
+        <div class="dropdown-content">
+            <a class="navbar-anchor" href="{% url 'client:add_client'%}">- Add Clients</a>
+        </div>
     </li>
-  
 
     <li class="grid-align-vertical">
         <i class="fa-regular fa-address-card"></i>
@@ -34,4 +41,6 @@
         <a class="navbar-anchor" href="{% url 'user:list_config'%}">Configuration</a>
     </li>
 </ul>
+
+
    

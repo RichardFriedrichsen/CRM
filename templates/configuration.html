@@ -2,26 +2,24 @@
 
 {% block content %}
 
-   
-    <h3 class="addheaders">E-Mail Configuration:</h3>
-         <div class="card card-form">
-            <form action="" method=POST>
+   <div class="form-wrapper">
+    <h1 class="table-header">E-Mail Configuration:</h1>
+         
+            <form class="form_centered" action="" method=POST>
                 {%csrf_token%}
 
                 {% for field in form %}
                 <div class="form-field">
-                    {{ field.label_tag }}
-                    <br>
+                    <label class="form-label">{{ field.label_tag }}</label>
                     {{ field }}
                     {{ field.errors }}
                 </div>
                 {% endfor %}
-
-                <br>
-                <input type="submit" value="{% if config is None %}Submit{% else %}Update{% endif%}" class="btn btn-primary">
+                <div class="div-button">
+                <button type="submit" class="table-button">{% if config is None %}Submit{% else %}Update{% endif%}</button>
+                </div>
             </form>
-        </div>
-    
+    </div>
 
     
     

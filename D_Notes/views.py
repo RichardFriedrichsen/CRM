@@ -12,7 +12,7 @@ def add_note(request):
         # check whether it's valid:
         if form.is_valid():
             form.save()
-            return redirect('emails:list_emails')
+            return redirect('notes:read_note')
 
     # if a GET (or any other method) we'll create a blank form
     else:
