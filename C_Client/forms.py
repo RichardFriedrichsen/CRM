@@ -9,7 +9,7 @@ class add_client_form(ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Enter the name','class': 'form-input-field'}),
             'surname': forms.TextInput(attrs={'placeholder': 'Enter the surname','class': 'form-input-field'}),
-            'email': forms.TextInput(attrs={'placeholder': 'Enter the E-mail','class': 'form-input-field'}),
+            'eml': forms.TextInput(attrs={'placeholder': 'Enter the E-mail','class': 'form-input-field'}),
             'phone': forms.TextInput(attrs={'placeholder': 'Enter the phone','class': 'form-input-field'}),
 
     }
