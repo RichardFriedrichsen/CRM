@@ -5,6 +5,7 @@ from .forms import add_client_form
 # Create your views here.
 
 
+################## Adding Client #########################
 def add_client(request):
 
     # if this is a POST request we need to process the form data
@@ -22,11 +23,33 @@ def add_client(request):
 
     return render(request, "add_client.html", {"form": form})
 
-
+################## Reading Clients #########################
 def read_clients(request):
     all_clients = Client.objects.all()
 
     return render(request, "read_clients.html", {"all_clients": all_clients})
+
+################## Updating Client #########################
+def update_client(request, client_id):
+    client = get_object_or_404(Client, pk = client_id)
+    
+    submitted = False
+
+    if request.method == "POST":
+        form = add_client_form(request.POST, instance=client)
+        if form.is_valid():
+            form.save()
+            return redirect('client:read_clients')
+    else:
+        form = add_client_form(instance=client)
+
+    if 'submitted' in request.GET:
+        submitted = True
+
+    return render(request, "add_client.html", {"form": form, 'submitted': submitted, 'client': client}) 
+
+
+################## Deleting Client #########################
 
 def delete_client(request, client_id):
     client = get_object_or_404(Client, pk = client_id)
