@@ -8,6 +8,7 @@ class Client(models.Model):
     surname = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=50)
+    
 
     def __str__(self):
         return f"{self.name} {self.surname}"

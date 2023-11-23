@@ -2,26 +2,24 @@
 
 {% block content %}
 
-   
-    <h3 class="addheaders">Add Note:</h3>
-         <div class="card card-form">
+   <div class="form-wrapper form-note">
+    <h1 class="table-header">Add Note:</h1>
             <form action="" method=POST>
                 {%csrf_token%}
 
                 {% for field in form %}
                 <div class="form-field">
-                    {{ field.label_tag }}
-                    <br>
+                    <label class="form-label">{{ field.label_tag }}</label>
+                
                     {{ field }}
                     {{ field.errors }}
                 </div>
                 {% endfor %}
-
-                <br>
-                <input type="submit" value="Add" class="">
+                <div class="div-button">
+                <button type="submit" value="Add" class="table-button">Add</button>
+                </div>
             </form>
-        </div>
-    
+    </div>
 
     
     

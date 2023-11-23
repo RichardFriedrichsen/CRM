@@ -2,30 +2,31 @@
 
 {% block content %}
 
-   
-    <h3 >To Do List:</h3>
-    <table border="1">
-        <tr>
+   <div class="table-wrapper">
+    <h1 class="table-header">To Do List:</h1>
+    <table class="table">
+        <tr class="table-row">
             
             <th>Created</th>
             <th>Client</th>
-            <th>Client</th>
+            <th>Deadline</th>
             <th>Contact Type</th>
             <th>Title</th>
             <th>Summary</th>
+            <th>Action</th>
         </tr>
         {% for todo in todo_notes %}
-        <tr>   
+        <tr class="table-row">   
             <td>{{ todo.createDate }}</td>
             <td>{{ todo.client }}</td>
-            <td>{{ todo.deadline }}</td>
+            <td><input type="date" value="{{ todo.deadline|date:'Y-m-d' }}"></td>
             <td>{{ todo.contact_type }}</td>
             <td>{{ todo.title }}</td>
             <td>{{ todo.summary }}</td>
-            <td><button>edit</button></td>
+            <td><button class="table-button"><a class="table-anchor" href="#">Edit</a></button><button class="table-button table-button-delete"><a class="table-anchor" href="#">Delete</a></button></td>
         </tr>
         {% endfor %}
 
     </table>
-    
+</div>
 {% endblock %}
