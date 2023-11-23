@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from .models import Client
 from .forms import add_client_form
@@ -14,7 +14,7 @@ def add_client(request):
         # check whether it's valid:
         if form.is_valid():
             form.save()
-            return redirect('emails:list_emails')
+            return redirect('client:read_clients')
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -27,3 +27,10 @@ def read_clients(request):
     all_clients = Client.objects.all()
 
     return render(request, "read_clients.html", {"all_clients": all_clients})
+
+def delete_client(request, client_id):
+    client = get_object_or_404(Client, pk = client_id)
+    client.delete()
+
+    return redirect('client:read_clients')
+    
