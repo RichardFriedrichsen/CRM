@@ -119,6 +119,11 @@ body {
     border-radius: 5px;
 }
 
+.table-button:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
 .table-button-delete {
     background-color: var(--secondary-color);
 }
@@ -127,6 +132,10 @@ body {
     text-decoration: none;
     font-weight: bold;
     color: var(--writing-color);
+}
+
+.table-anchor:hover {
+    color: var(--secondary-color);
 }
 
 /************* Forms  ***************/

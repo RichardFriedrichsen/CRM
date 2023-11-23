@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from .models import Note
 from .notes_form import add_note_form
 
@@ -29,5 +29,8 @@ def read_notes(request):
 def update_note(request):
     pass
 
-def delete_note(request):
-    pass
+def delete_note(request, note_id):
+    note = get_object_or_404(Note, pk = note_id)
+    note.delete()
+    
+    return redirect('notes:read_note') 
