@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from .models import Client
 from .forms import add_client_form
+
+from A_Email.tasks import saving_client_emails
 # Create your views here.
 
 
@@ -14,7 +16,9 @@ def add_client(request):
         form = add_client_form(request.POST)
         # check whether it's valid:
         if form.is_valid():
+            eml_value = form.cleaned_data['eml']
             form.save()
+            saving_client_emails(eml_value)
             return redirect('client:read_clients')
 
     # if a GET (or any other method) we'll create a blank form

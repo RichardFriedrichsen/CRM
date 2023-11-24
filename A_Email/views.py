@@ -7,6 +7,7 @@ from .models import Email
 
 def list_emails(request):
     retrivingEmails()
+
     read_emails = Email.objects.all()
 
     return render(request, "email.html", {"read_emails": read_emails})
